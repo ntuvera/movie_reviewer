@@ -1,15 +1,16 @@
-== README
+##Movie Review CRUD App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####a simple CRUD app built with Ruby on Rails, and teste with rspec
 
-Things you may want to cover:
 
-* Ruby version
+![screen shot](/imge path goes here/)
 
-* System dependencies
 
-* Configuration
+* Rails version 4.1.1
+
+* Postgresql version 9.3.4
+
+* rSpec version
 
 * Database creation
 

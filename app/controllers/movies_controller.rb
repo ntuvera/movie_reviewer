@@ -13,6 +13,10 @@ class MoviesController < ApplicationController
   end
 
 # edit_movie GET    /movies/:id/edit(.:format) movies#edit
+
+  def edit
+  end
+
 #      movie GET    /movies/:id(.:format)      movies#show
   def show
   end
