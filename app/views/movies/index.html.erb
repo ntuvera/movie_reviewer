@@ -1,0 +1,14 @@
+  <h2>List of Movies in the Database</h2>
+
+  <% @movies.each do |movie| %>
+  <ul>
+    <li><%= movie.title %>, <%= movie.year %></li>
+  </ul>
+  <% end %>
+
+  <form action="/movies" method='post'>
+    <%= token_tag %>
+    <input type='text' name='movie[title]'>
+    <input type='text' name='movie[year]'>
+    <input type='submit' value='Add Movie'>
+  </form>
