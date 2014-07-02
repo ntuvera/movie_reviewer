@@ -7,11 +7,12 @@ class MoviesController < ApplicationController
 #            POST   /movies(.:format)          movies#create
   def create
     movie = Movie.create( movie_params)
-    redirect_to "/movies/#{movie.id}"
+    redirect_to movie_path(movie)
   end
 
 #  new_movie GET    /movies/new(.:format)      movies#new
   def new
+    @movie = Movie.new
   end
 
 # edit_movie GET    /movies/:id/edit(.:format) movies#edit
@@ -29,13 +30,13 @@ class MoviesController < ApplicationController
   def update
     movie = Movie.find(params[:id])
     movie.update(movie_params)
-    redirect_to "/movies/#{movie.id}"
+    redirect_to movie_path(movie)
   end
 #            PUT    /movies/:id(.:format)      movies#update
 #            DELETE /movies/:id(.:format)      movies#destroy
   def destroy
     Movie.delete(params[:id])
-    redirect_to "/movies"
+    redirect_to movies_path
   end
 
   private

@@ -1,10 +1,8 @@
 <h3><%= @movie.title %></h3>
 <p> <%= @movie.year %></p>
 
-<form action='/movies/<%= @movie.id %>' method='post'>
-  <input type='hidden' name='_method' value='put'>
-  <%= token_tag %>
-  <input type='text' name='movie[title]' placeholder='<%= @movie.title %>'>
-  <input type='text' name='movie[year]' placeholder='<%= @movie.year %>'>
-  <input type='submit' value='Edit Movie'>
-</form>
+<ul>
+  <li>erb of movie reviews list here</li>
+</ul>
+
+<%= link_to movies_path %>
