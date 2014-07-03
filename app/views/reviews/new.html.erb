@@ -1,13 +1,13 @@
-<h3>Add Movie Review</h3>
-
-
+<h3>Add Movie Review for '<%= @movie.title %>'</h3>
 
   <form action="/movies/<%= @movie.id %>/reviews" method='post'>
     <%= token_tag %>
-    <input type='text' name='review[title]' placeholder='Movie Title'>
-    <input type='text' name='review[date]' placeholder='Year'>
+    <input type='text' name='review[title]' placeholder='Short Title'>
+    <input type='text' name='review[date]' placeholder='Date'>
     <input type='text' name='review[rating]'
     placeholder="Rating">
-    <input type='text' name='movie[desc]' placeholder='Type'>
-    <input type='submit' value='Add Movie'>
+    <input type='text' name='review[desc]' placeholder='Description'>
+    <input type='text' name='review[movie_id]'
+    value="<%= @movie.id %>">
+    <input type='submit' value='Add Review'>
   </form>

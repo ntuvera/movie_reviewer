@@ -2,7 +2,8 @@
 
   <% @movies.each do |movie| %>
   <ul>
-    <li><%= movie.title %>, <%= movie.year %> genre:<%= movie.desc %>.
+    <li>
+      <a href='/movies/<%= movie.id %>'><%= movie.title %></a>, <%= movie.year %> genre: <%= movie.desc %>.
       <a href='/movies/<%= movie.id %>/reviews'><%= movie.reviews.count %> of reviews</a>
     </li>
   </ul>

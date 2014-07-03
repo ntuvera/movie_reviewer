@@ -1,8 +1,23 @@
 <h3><%= @movie.title %></h3>
 <p> <%= @movie.year %></p>
 
-<ul>
-  <li>erb of movie reviews list here</li>
-</ul>
-
-<a href='/movies/<%= @movie.id %>/reviews'><button>add a review</button></a>
+<% @reviews.each do |review| %>
+  <ul>
+    <li>Rating: <%= review.rating %> <%= review.title %>
+      <br>
+      <%= review.date %>
+      <br>
+      <%= review.desc %>
+    </li>
+  </ul>
+<% end %>
+<a href='/movies'><button>Return to Index</button></a>
+<a href='/movies/<%= @movie.id %>/reviews/new'><button>Add a Review</button></a>
+<a href="/movies/<%= @movie.id %>/edit">
+  <button type='submit'>Edit Movie</button>
+</a>
+<form action="/movies/<%= @movie.id %>" method='post'>
+  <%= token_tag %>
+  <input type='hidden' name='_method' value="delete">
+  <button type='submit'>Delete Movie</button>
+</form>

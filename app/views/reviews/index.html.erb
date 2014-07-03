@@ -1,8 +1,23 @@
-<h3>Reviews for <%= @movie.title %></h3>
+<h3>Reviews for '<%= @movie.title %>'</h3>
+
+<a href='/movies'>
+  <button>Return to Movies Index</button>
+</a>
+<a href='reviews/new'>
+  <button>Add a Review</button>
+</a>
+
+
+
 
 <% @reviews.each do |review| %>
   <ul>
-    <li><%= review.rating %>: <%= review.title %>
+    <li>Rating:<%= review.rating %> <%= review.title %>
+      <form action="/movies/<%= @movie.id %>/reviews/<%= review.id %>" method='post'>
+        <%= token_tag %>
+        <input type='hidden' name='_method' value="delete">
+        <button type='submit'>Delete</button>
+      </form>
     </li>
   </ul>
 <% end %>
