@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 #       movies GET    /movies(.:format)          movies#index
   def index
     @movies = Movie.all
+    @movie  = Movie.new
   end
 
 #            POST   /movies(.:format)          movies#create

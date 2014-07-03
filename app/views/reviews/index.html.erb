@@ -1,0 +1,10 @@
+<h3>Reviews for <%= @movie.title %></h3>
+
+<% @reviews.each do |review| %>
+  <ul>
+    <li><%= review.rating %>: <%= review.title %>
+    </li>
+  </ul>
+<% end %>
+
+

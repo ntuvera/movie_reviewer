@@ -2,13 +2,19 @@
 
   <% @movies.each do |movie| %>
   <ul>
-    <li><%= movie.title %>, <%= movie.year %> genre:<%= movie.desc %>. <%= movie.reviews.count %> of reviews</li>
+    <li><%= movie.title %>, <%= movie.year %> genre:<%= movie.desc %>.
+      <a href='/movies/<%= movie.id %>/reviews'><%= movie.reviews.count %> of reviews</a>
+    </li>
   </ul>
   <% end %>
 
+<%= render 'form' %>
+<!--
   <form action="/movies" method='post'>
     <%= token_tag %>
-    <input type='text' name='movie[title]'>
-    <input type='text' name='movie[year]'>
+    <input type='text' name='movie[title]' placeholder='Movie Title'>
+    <input type='text' name='movie[year]' placeholder='Year'>
+    <input type='text' name='movie[desc]' placeholder='Type'>
     <input type='submit' value='Add Movie'>
   </form>
+ -->

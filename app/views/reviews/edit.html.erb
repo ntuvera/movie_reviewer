@@ -1,0 +1,11 @@
+
+  <form action="/movies/<%= @movie.id %>/reviews" method='post'>
+    <input type='hidden' name='_method' value='put'
+    <%= token_tag %>
+    <input type='text' name='review[title]' Value='<%= @review.title %>'>
+    <input type='text' name='review[date]' Value='<%= @review.date %>'>
+    <input type='text' name='review[rating]'
+    Value='<%= @review.rating %>'>
+    <input type='text' name='movie[desc]' Value='<%= @review.desc %>'>
+    <input type='submit' value='Edit Review'>
+  </form>
