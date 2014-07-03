@@ -2,7 +2,7 @@
 
   <% @movies.each do |movie| %>
   <ul>
-    <li><%= movie.title %>, <%= movie.year %> genre:<%= movie.desc %> # of reviews</li>
+    <li><%= movie.title %>, <%= movie.year %> genre:<%= movie.desc %>. <%= movie.reviews.count %> of reviews</li>
   </ul>
   <% end %>
 
